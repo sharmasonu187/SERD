@@ -1,0 +1,201 @@
+{
+	"ReplicationInputs" : [
+		
+		{
+			"OkToContinueIfChannelLocked" : "Yes",
+			"Description" : "Is it ok to continue if chosen channel is locked. Yes : continue, No : stop & exit"
+		},
+		{
+			"AnalysisDone" : "Yes",
+			"AnalysisReport" : "/apps/app_name/1611/1/DBR1234.html",
+			"Description" : "Have you done the analysis and sent report to everyone ? Please add location of html file"
+		},
+		{
+			"GitRepositoryURL" : "https://github.com/sharmasonu187/SERD",
+			"Description" : "Specify the GIT repository where SQL changes are "
+		},
+		{
+			"SelectedEnv" : "Test",
+			"SelectedServerName" : "TestHVRHubServer",
+			"SelectedChannelNum" : 1,
+			"Description" : "Select a Channel to apply changes",
+			"Misc" : "This doesn't change so often if any change , we add it manually here"
+			"EnvAndChannelList" : [
+					{
+						"EnvName" : "Test",
+						"ServerName" : "TestHVRHubServer",
+						"AvailableChannels":[
+							{
+								"ChannelNum" : 1,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2",
+								"Misc":"OK to stop Channel if Threshold below this value"
+							},
+							{
+								"ChannelNum" : 2,
+								"Value" : "ChannelNum2",		
+								"ThresholdLatencyValue(seconds)" : "2"
+							},
+							{
+								"ChannelNum" : 3,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 4,
+								"Value" : "ChannelNum4",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							}
+						]
+					},
+					{
+						"EnvName" : "Stage1",
+						"ServerName" : "Stage1HVRHubServer",						
+						"AvailableChannels":[
+							{
+								"ChannelNum" : 1,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"
+							},
+							{
+								"ChannelNum" : 2,
+								"Value" : "ChannelNum2",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 3,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 4,
+								"Value" : "ChannelNum4",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							}
+						]
+					},
+					{
+						"EnvName" : "Stage2",
+						"ServerName" : "Stage2HVRHubServer",						
+						"AvailableChannels":[
+							{
+								"ChannelNum" : 1,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"
+							},
+							{
+								"ChannelNum" : 2,
+								"Value" : "ChannelNum2",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 3,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 4,
+								"Value" : "ChannelNum4"
+								"ThresholdLatencyValue(seconds)" : "2"								
+							}
+						]
+					},
+					{
+						"EnvName" : "Prod1",
+						"ServerName" : "Prod1HVRHubServer",						
+						"AvailableChannels":[
+							{
+								"ChannelNum" : 1,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"
+							},
+							{
+								"ChannelNum" : 2,
+								"Value" : "ChannelNum2",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 3,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 4,
+								"Value" : "ChannelNum4"
+								"ThresholdLatencyValue(seconds)" : "2"								
+							}
+						]
+					},
+					{
+						"EnvName" : "Prod2",
+						"ServerName" : "Prod2HVRHubServer",						
+						"AvailableChannels":[
+							{
+								"ChannelNum" : 1,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"
+							},
+							{
+								"ChannelNum" : 2,
+								"Value" : "ChannelNum2",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 3,
+								"Value" : "ChannelNum1",
+								"ThresholdLatencyValue(seconds)" : "2"								
+							},
+							{
+								"ChannelNum" : 4,
+								"Value" : "ChannelNum4"
+								"ThresholdLatencyValue(seconds)" : "2"								
+							}
+						]
+					}
+			]
+		},
+		{
+			"EnterDBR" : "DBR1234",
+			"Description" : "Enter DBR number"
+			"Misc" : "By phase 3 this will no longer be needed, Needed till Phase 2 "
+		},
+		{
+			"MaxTimeOut" : 250,
+			"Description" : "Max Time (in seconds) the script waits for HVR Server latency to reduce"
+		},
+		{
+			"Description" : "How do you want to refresh new tables ? Not applicable for existing tables or remove table option",
+			"RefreshTableList" :[
+				{
+					"SequenceNum" : 1,
+					"ApplyOn" : "source",
+					"TableName" : "table1",
+					"SchemaName" : "idr",
+					"RefreshBy" : "RowByRow"
+				},
+				{
+					"SequenceNum" : 2,
+					"ApplyOn" : "target",
+					"TableName" : "table1",
+					"SchemaName" : "ops",
+					"RefreshBy" : "RowByRow"						
+				},
+				{
+					"SequenceNum" : 3,
+					"ApplyOn" : "source",
+					"TableName" : "table2",
+					"SchemaName" : "idr",
+					"RefreshBy" : "RowByRow"					
+				},
+				{
+					"SequenceNum" : 4,
+					"ApplyOn" : "target",
+					"TableName" : "table2",
+					"SchemaName" : "ops",
+					"RefreshBy" : "RowByRow"	
+				}
+			]
+		}
+	]
+}
+
