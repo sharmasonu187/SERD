@@ -1,0 +1,1 @@
+alter table table_name_2 add column_name varchar2(15);
